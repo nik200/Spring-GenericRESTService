@@ -5,4 +5,8 @@ public class GenericSpringService {
 	{	
 		return postString;
 	}
+	
+	public static Object getMonitorObject(){
+		return "Stats";
+	}
 }
