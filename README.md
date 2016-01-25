@@ -17,8 +17,8 @@ Pre-build jar can be used from the Git repository if no further extensions/modif
 
 2. Add the bin directory of the created directory apache-maven-3.3.9 to the PATH environment variable
    To verify, execute `mvn -v` command  in a cmd prompt. The result should look similar to - 
-C:\Spring-workspace\SpringBootGenericService>mvn -v
 ```bash
+C:\Spring-workspace\SpringBootGenericService>mvn -v
 Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T10:41:47-06:00)
 Maven home: C:\Spring-workspace\apache-maven-3.3.9\bin\..
 Java version: 1.7.0_07, vendor: Oracle Corporation
