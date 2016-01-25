@@ -17,15 +17,15 @@ Pre-build jar can be used from the Git repository if no further extensions/modif
 
 2. Add the bin directory of the created directory apache-maven-3.3.9 to the PATH environment variable
    To verify, execute `mvn -v` command  in a cmd prompt. The result should look similar to - 
-		C:\Spring-workspace\SpringBootGenericService>mvn -v
-		Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T10:41:4
-		7-06:00)
-		Maven home: C:\Spring-workspace\apache-maven-3.3.9\bin\..
-		Java version: 1.7.0_07, vendor: Oracle Corporation
-		Java home: C:\Program Files\Java\jdk1.7.0_07\jre
-		Default locale: en_IN, platform encoding: Cp1252
-		OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
-
+C:\Spring-workspace\SpringBootGenericService>mvn -v
+```bash
+Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T10:41:47-06:00)
+Maven home: C:\Spring-workspace\apache-maven-3.3.9\bin\..
+Java version: 1.7.0_07, vendor: Oracle Corporation
+Java home: C:\Program Files\Java\jdk1.7.0_07\jre
+Default locale: en_IN, platform encoding: Cp1252
+OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
+```
 ###Creating a Maven project
 		
 3. Create a project root directory. Ex. `C:\Spring-workspace\SpringBootGenericService`
@@ -54,19 +54,21 @@ Note : For our example we will need to place `impl.jar` to the location `C:\Spri
 
 To implement our API's and plugging them to the generic web service which we created in Part 1, we'll need to create a simple java project with `generic.spring.implementations.GenericSpringService` class.
 This class should atleast define two static methods - 
-`public static String baseMethod(String serviceName, String operationName, String soapAction,String postString);`
-`public static Object getMonitorObject();`
+```java
+public static String baseMethod(String serviceName, String operationName, String soapAction,String postString){}
+public static Object getMonitorObject(){}
+```
 These methods are kind of callback methods which will be imvoked our generic web service. A dummy `generic.spring.implementations.GenericSpringService` class is required to be in Maven dependency for the build to complete successfully in Part 1.
 
-		```xml
-	  <dependency>
+```xml
+<dependency>
     	<groupId>impl</groupId>
     	<artifactId>Implementation</artifactId>
     	<version>1.0</version>
     	<scope>system</scope>
-    	<systemPath>C:/Spring-workspace/SpringBootGenericService/lib/impl.jar</systemPath>
-    </dependency>
-    ```
+	<systemPath>C:/Spring-workspace/SpringBootGenericService/lib/impl.jar</systemPath>
+</dependency>
+```
 
 ###Service API
 The generic web service created in Part 1, exposes a URI `/RestWebService/{serviceName}/{operationName}` which accepts `POST` requests of content-type `application/xml` and responds back in the same format.
