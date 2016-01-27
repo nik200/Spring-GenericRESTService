@@ -1,0 +1,4 @@
+util\generic\service\HelloController.class
+util\generic\service\GenericServiceController.class
+util\generic\service\CustomEndpoint.class
+util\generic\service\SpringBootGenericServiceApplication.class
